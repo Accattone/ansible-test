@@ -1,0 +1,11 @@
+---
+ - hosts: 217.61.247.40
+   user: debian
+   vars:
+    motd_welcome: "Welcome to the Officina Linux.\nPowered by Binario Etico.\n"
+   tasks:
+   - name: sample motd
+     copy:
+      dest: /etc/motd
+      content: " {{motd_welcome}} "
+     become: true
